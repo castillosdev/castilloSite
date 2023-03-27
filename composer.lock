@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7ba2e41605c5647cc5ab630e80aa0df9",
+    "content-hash": "69244aa6f1de886429c94638015efb74",
     "packages": [
         {
             "name": "ajgl/breakpoint-twig-extension",
@@ -1031,18 +1031,6 @@
                 "wiki": "https://github.com/Upstatement/routes/wiki"
             },
             "time": "2022-06-22T19:53:51+00:00"
-        },
-        {
-            "name": "wpengine/advanced-custom-fields-pro",
-            "version": "6.0.7",
-            "dist": {
-                "type": "zip",
-                "url": "https://connect.advancedcustomfields.com/v2/plugins/composer_download?p=pro&t=6.0.7"
-            },
-            "require": {
-                "composer/installers": "~1.0 || ~2.0"
-            },
-            "type": "wordpress-plugin"
         }
     ],
     "packages-dev": [],
