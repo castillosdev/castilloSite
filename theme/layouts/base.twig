@@ -1,0 +1,27 @@
+{% block html_head_container %}
+
+	{% include 'partial/html-header.twig' %}
+	{% block head %}{% endblock %}
+</head>{% endblock %}<body class="{{body_class}} relative" data-template="base.twig">
+<a class="skip-link screen-reader-text sr-only" href="#main-content">{{ _e( 'Skip to content') }}</a>
+<header
+	class="header relative z-10">
+	{% block header %}
+		{% include "components/navigation.twig" with {'items': mainMenu.get_items} %}
+	{% endblock %}
+</header>
+<main id="main-content">
+		{% block content %}
+			Sorry, no content
+		{% endblock %}
+</main>
+
+
+	<footer
+		id="footer">
+		{% block footer %}
+		{% include 'footer.twig' %}
+		{% endblock %}
+	</footer>
+	{{ function('wp_footer') }}
+</body></html>

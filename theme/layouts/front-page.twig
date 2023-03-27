@@ -1,0 +1,16 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+	{{ post.content }}
+	{# for dev purpose on site-load, delete after project begins #}
+	<div class="h-screen flex justify-center items-center w-full bg-gray-200">
+		<div class="w-[80%] mx-auto text-center">
+			<h1 class="text-5xl">
+				Welcome to Origins
+			</h1>
+			<p class="mt-5">
+				Remove this placeholder once the project starts
+			</p>
+		</div>
+	</div>
+{% endblock %}

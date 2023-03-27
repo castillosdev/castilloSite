@@ -1,0 +1,17 @@
+{
+    "require": {
+        "timber/timber": "^1.22",
+        "djboris88/timber-debugger": "^1.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://connect.advancedcustomfields.com"
+        }
+    ]
+}

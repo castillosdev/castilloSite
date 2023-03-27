@@ -1,0 +1,61 @@
+<div x-data="{navIsOpen: false}"class="flex flex-col md:flex-row justify-between items-center md:px-10 relative w-full bg-gray-900">
+<div class="flex justify-between p-4 text-2xl items-center   ">
+	<a href="{{ site.home_url }}" class="mr-5 md:w-1/5 max-w-[291px] flex items-center">
+		{% if logo.id %}
+		<img class="hidden md:block" src="{{logo}}"
+		alt="{{site.name}}" />
+		{% else %}
+		<h3>{{site.name}}</h3>
+		{% endif %}
+	</a>
+	<div @click="navIsOpen = !navIsOpen" id="hamburger-icon" class="md:hidden relative h-5 w-6 cursor-pointer transition duration-500 ease-in-out transform"
+	:class="[navIsOpen ? 'open' : '']">
+		<span class="block absolute h-1 w-full bg-white rounded-lg transition duration-250 top-0"
+		:class="[navIsOpen ? 'top-4 w-0 left-5' : '']"></span>
+		<span class="block absolute h-1 w-full bg-white rounded-lg transition duration-250 top-2"
+		:class="[navIsOpen ? 'rotate-45' : '']"></span>
+		<span class="block absolute h-1 w-full bg-white rounded-lg transition duration-250 top-2"
+		:class="[navIsOpen ? '-rotate-45' : '']"></span>
+		<span class="block absolute h-1 w-full bg-white rounded-lg transition duration-250 top-4"
+		:class="[navIsOpen ? 'top-4 w-0 left-5' : '']"></span>
+	</div>
+</div>
+	<ul class="justify-end gap-5 hidden w-full md:flex">
+		{% for item in mainMenu.items %}
+			<li class="py-4 flex items-center group {{ item.class }}">
+				<a href="{{ item.url }}" class="text-white text-2xl transition-all  {{ item.current ? 'text-green-300' : '' }}">{{ item.name }} {{item.has_child_class ? '<span class="inline-block transition-transform group-hover:rotate-90">></span>' : ''}}</a>
+				{# TODO: ADD SUBMENU #}
+				{% if item.has_child_class %}
+				<ul class="">
+					{% for child in item.children %}
+					<li class="">
+						<a href="{{ child.url }}" class="text-white {{ child.class }} font-bold text-lg">{{ child.name }}</a>
+					</li>
+					{% endfor %}
+				</ul>
+				{% endif %}
+			</li>
+		{% endfor %}
+	</ul>
+	<div id="mobileMenu" x-collapse x-show="navIsOpen" class="w-full py-4 md:hidden">
+		<ul class="flex flex-col justify-start items-start">
+			{% for item in mainMenu.items %}
+				<li x-data="{submenuIsOpen: false}" class="{{ loop.first ? 'mt-0' : 'mt-8' }} w-full">
+					<div class="text-xl text-white group hover:text-red transition-all px-4">
+					<a href="{{ item.url }}" class="{{ item.class }}  {{ item.current ? 'text-red' : '' }}">{{ item.name }}</a>
+					{{item.has_child_class ? '<span @click="submenuIsOpen = !submenuIsOpen" :class="submenuIsOpen ? \'rotate-90\' : \'\'" class="inline-block transition-transform cursor-pointer">></span>' : ''}}
+					</div>
+					{% if item.has_child_class %}
+					<ul x-collapse x-show="submenuIsOpen" class="flex flex-col justify-start items-start w-full bg-red py-6 pl-8 mt-5">
+						{% for child in item.children %}
+						<li class="{{ loop.first ? 'mt-0' : 'mt-5' }}">
+							<a href="{{ child.url }}" class="{{ child.class }} text-lg text-white">{{ child.name }}</a>
+						</li>
+						{% endfor %}
+					</ul>
+					{% endif %}
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</nav>

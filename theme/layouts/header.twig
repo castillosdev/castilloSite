@@ -1,0 +1,17 @@
+
+{# TODO: Move these to a navbar.twig and update the folder structure #}
+
+<div class="flex">
+	<p class="text-lg">Company Logo</p>
+	<div class="flex-grow">
+		<ul class="flex justify-end">
+			{% for item in menu.items %}
+				<li class="mr-6 {{ item.class }}">
+					<a href="{{ item.url }}" class="text-lg">{{ item.name }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>
+
+{{ dump(menu.items) }}

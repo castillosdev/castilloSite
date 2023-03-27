@@ -1,0 +1,68 @@
+<div class="flex flex-col">
+	<div class="bg-gray-400">
+				{% for item in footerMenu.get_items %}
+					<a href="{{ item.url }}">{{ item.title }}</a>
+				{% endfor %}
+
+			<div class="mb-9 mt-20 max-w-[291px] mx-auto md:mb-0 md:mt-0 md:mx-0">
+				{% if logoImage.id %}
+					<a href="{{ site.home_url }}">
+						<img class="w-full"
+							src="{{ logo }}"
+							alt="{{ site.name }}" />
+					</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	<div class="text-white bg-gray-500 xl:flex xl:justify-end">
+		<div class="p-5 text-center text-lg w-full xl:flex xl:justify-end xl:max-w-[1611px]">
+			<div class="flex-grow">
+				<p class="md:no-wrap">
+					Copyright © {{ 'now'|date('Y') }} {{ site.title }}. All
+					rights reserved.
+				</p>
+				<a href="/privacy">Privacy</a><span class="px-4">|</span><a href="/accessibility">Accessibility</a>
+			</div>
+			{# TODO: Add Font Awesome Here Instead Of Images #}
+			<div class="flex flex-row gap-5 justify-center items-end mt-8">
+				{% if options.facebook_link %}
+					<a href="{{ options.facebook_link }}" target="_blank">
+						<img src="{{ theme.path }}/images/facebook.png"
+							alt="Facebook Icon" />
+					</a>
+				{% endif %}
+				{% if options.twitter_link %}
+					<a href="https://twitter.com/LionbergerConst"
+						target="_blank">
+						<img src="{{ theme.path }}/images/twitter.png"
+							alt="Twitter Icon" />
+					</a>
+				{% endif %}
+				{% if options.instagram_link %}
+					<a href="https://www.instagram.com/lionbergerconstruction/"
+						target="_blank">
+						<img src="{{ theme.path }}/images/instagram.png"
+							alt="Instagram Icon" />
+					</a>
+				{% endif %}
+
+				{% if options.linkedin_link %}
+					<a href="{{ options.linkedin_link }}" target="_blank">
+						<img src="{{ theme.path }}/images/linkedin.png"
+							alt="Linkedin Icon" />
+					</a>
+				{% endif %}
+
+				{% if options.linkedin_link %}
+					<a href="{{ options.youtube_link }}" target="_blank">
+						<img src="{{ theme.path }}/images/youtube.png"
+							alt="Youtube Icon" />
+					</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+{# TODO: Remove this dump, using for placeholder #}
+{{ dump() }}

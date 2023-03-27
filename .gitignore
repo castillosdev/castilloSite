@@ -1,0 +1,8 @@
+/node_modules
+/vendor
+.DS_Store
+script.min.js
+style.css
+style-editor.css
+origins.zip
+theme/js/script.min.js
