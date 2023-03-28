@@ -1,0 +1,13 @@
+{# check to see if {{ theme.path }}/images/examples/portfolio-block.jpg exists #}
+
+{% if asset_exists(theme.path ~ '/images/examples/base-name.jpg') %}
+	<img src="{{ theme.path }}/images/examples/base-name.jpg"
+		alt=""
+		class="w-[500px]" />
+{% else %}
+	<div class="w-[500px] h-full flex justify-center items-center">
+		<p class="text-5xl font-bold">
+			No Preview Found
+		</p>
+	</div>
+{% endif %}
