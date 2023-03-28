@@ -1,0 +1,29 @@
+{#
+  Title: Portfolio Block 
+  Description: This was automatically generated and should be changed.
+  Category: formatting
+  Icon: admin-comments
+  Keywords: Block Name
+  Mode: edit
+  Align: left
+  PostTypes: page post
+  SupportsAlign: left right center
+  SupportsMode: false
+  SupportsMultiple: false
+#}
+
+<div class="flex flex-row flex-auto flex-wrap gap-8 justify-center max-w-[1000px] mx-auto my-8 px-5">
+            {% for post in fields.porfolio %}
+                {% set image = Image(field.image) %}
+                <a href="/portfolio/{{field.slug}}">
+                    <div class="w-auto">
+                        <img class="m-0 w-[600px] lg:w-auto" src="{{image|towebp|resize(460,355)}}" alt="{{image.alt}}" />
+                        <div class="text-xl py-2 uppercase text-center bg-gray-500 text-white 
+                        transition-all hover:bg-red hover:transition-all	">
+                            <h2 class="text-xl">{{field.name}}</h2>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
