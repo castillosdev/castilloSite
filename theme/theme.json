@@ -28,6 +28,31 @@
 					"slug": "tertiary",
 					"color": "#0369a1",
 					"name": "Tertiary"
+				},
+				{
+					"slug": "blue-2",
+					"color": "#1e40af",
+					"name": "Blue 2"
+				},
+				{
+					"slug": "blue",
+					"color": "#172554",
+					"name": "Blue"
+				},
+				{
+					"slug": "dark-gray",
+					"color": "#111827",
+					"name": "Dark Gray"
+				},
+				{
+					"slug": "orange",
+					"color": "#ea580c",
+					"name": "Orange"
+				},
+				{
+					"slug": "yellow",
+					"color": "#eab308",
+					"name": "Yellow"
 				}
 			]
 		},

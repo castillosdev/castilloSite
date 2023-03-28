@@ -1,11 +1,11 @@
-<div x-data="{navIsOpen: false}"class="flex flex-col md:flex-row justify-between items-center md:px-10 relative w-full bg-gray-900">
-<div class="flex justify-between p-4 text-2xl items-center   ">
+<div x-data="{navIsOpen: false}"class="flex flex-col md:flex-row justify-between items-center md:px-10 relative w-full bg-gray-600">
+<div class="flex justify-between p-4 text-2xl items-center ">
 	<a href="{{ site.home_url }}" class="mr-5 md:w-1/5 max-w-[291px] flex items-center">
 		{% if logo.id %}
 		<img class="hidden md:block" src="{{logo}}"
 		alt="{{site.name}}" />
 		{% else %}
-		<h3>{{site.name}}</h3>
+		<h3 class="text-white">{{site.name}}</h3>
 		{% endif %}
 	</a>
 	<div @click="navIsOpen = !navIsOpen" id="hamburger-icon" class="md:hidden relative h-5 w-6 cursor-pointer transition duration-500 ease-in-out transform"
